@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <%- include("../partials/header.ejs") %>
+</head>
+<body>
+    
+    <%- include("../partials/nav.ejs") %>
+    
+    <div>
+        <h2><%= local.name %></h2>
+        <h3>Desciption:<%= local.description %></h3>
+        <h3>Local Type:<%= local.localType %></h3>
+        <h3>Capacity:<%= local.capacity %></h3>
+        <h3>Country:<%= local.country %></h3>
+        <h3>City:<%= local.city %></h3>
+        <h3>Address:<%= local.address %></h3>
+        <h3>Events:</h3>
+        <% events.forEach(event => { %>
+            <% if(event.local == local.name) { %>
+                <a href="/admin/events/<%= event._id %>"><h3 class="blue-tag"><%= event.name %> | <%= event.eventType %></h3></a>
+            <% } %>
+        <% }) %>
+        <button><a href="/admin/locals/edit-local/<%= local._id %>">Edit</a></button>
+        <form action="/admin/locals/<%= local._id %>" method="POST">
+            <input type="hidden" value="<%= local._id %>" name="id">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+
+</body>
+</html>

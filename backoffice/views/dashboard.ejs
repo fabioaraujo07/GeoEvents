@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    
+    <%- include("./partials/header.ejs") %>
+
+	<title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+  <%- include("./partials/nav.ejs") %>
+
+	<h1>Dashboard</h1>
+
+      <div class="numLocals">
+          <h2>Number of Locals</h2>
+          <h2><%= numLocals %></h2>
+      </div>
+      <div class="numEvents">
+          <h2>Number of Events</h2>
+          <h2><%=numEvents %></h2>
+      </div>
+      <div class="numTickets">
+          <h2>Number of Created Tickets</h2>
+           <h2><%= numTickets%></h2>
+      </div>
+      <div class="numSales">
+          <h2>Number of Sales</h2>
+          <h2><%= numSales %></h2>
+      </div>
+      <div class="numUsers">
+          <h2>Number of Users</h2>
+          <h2><%= numUsers %></h2>
+      </div>
+
+
+    <canvas id="grafico-pizza"></canvas>
+
+    <script>
+      const ctx = document.getElementById('grafico-pizza').getContext('2d');
+      const graficoPizza = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ['Users', 'Events', 'Locals', 'Tickets', 'Sales'],
+          datasets: [{
+            label: 'Data Base Informations',
+            data: [numUsers, numEvents, numLocals, numTickets, numSales],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.5)',
+              'rgba(54, 162, 235, 0.5)',
+              'rgba(255, 206, 86, 0.5)',
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(153, 102, 255, 0.5)'
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          legend: {
+            position: 'left'
+          }
+        }
+      });
+    </script>
+    
+
+</body>
+</html>

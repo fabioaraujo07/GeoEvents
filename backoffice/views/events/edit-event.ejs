@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <%- include("../partials/header.ejs") %>
+</head>
+<body>
+    
+    <%- include("../partials/nav.ejs") %>
+
+    <div class="add-form">
+        <form action="/admin/events/edit-event/<%=event._id%>" method="POST">
+            <input type="hidden" id="id" name="id" value="<%= event._id %>">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="<%= event.name %>">
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" value="<%= event.description %>">
+            <label for="local">Local:</label>
+            <select id="local" name="local">
+                <% locals.forEach(local => { %>
+                    <% if(local.name == event.local) { %>
+                        <option value="<%= local.name %>" selected><%= local.name %></option>
+                    <% } %>
+                    <option value="<%= local.name %>"><%= local.name %></option>
+                <% }) %>
+            </select>
+            <label for="eventType">Event Type:</label>
+            <select id="eventType" name="eventType">
+                <% eventTypes.forEach(eventType => { %>
+                    <% if(eventType.name == event.eventType) { %>
+                        <option value="<%= eventType.name %>" selected><%= eventType.name %></option>
+                    <% } %>
+                    <option value="<%= eventType.name %>"><%= eventType.name %></option>
+                <% }) %>
+            </select>
+            <% if(event.eventType == "Visita") { %>
+                <label for="date">Expiration Date:</label>
+                <input type="date" id="date" name="date" value="<%= date %>">
+            <% } else {%>
+                <label for="capacity">Capacity:</label>
+            <input type="number" id="capacity" name="capacity" value="<%= event.capacity %>">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" value="<%= date %>">
+            <% } %>
+            
+            <button>Update</button>
+        </form>
+    </div>
+
+</body>
+</html>

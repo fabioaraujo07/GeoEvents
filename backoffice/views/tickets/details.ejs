@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <%- include("../partials/header.ejs") %>
+</head>
+<body>
+    
+    <%- include("../partials/nav.ejs") %>
+
+    <div>
+        <h2>Ticket Name: <%= ticket.name %></h2>
+        <h2>Local: <%= ticket.local %></h2>
+        <h2>Event: <%= ticket.event %></h2>
+        <h2>Price: <%= ticket.price %>€</h2>
+        <button><a href="/admin/tickets/edit-ticket/<%= ticket._id %>">Edit</a></button>
+        <form action="/admin/tickets/<%= ticket._id %>" method="POST">
+            <input type="hidden" value="<%= ticket._id %>" name="id">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+
+</body>
+</html>

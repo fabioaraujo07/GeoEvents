@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <%- include("../partials/header.ejs") %>
+</head>
+<body>
+    
+    <%- include("../partials/nav.ejs") %>
+    
+    <div>
+        <% if(localTypes.length > 0) { %>
+            <% localTypes.forEach(localType => { %>
+                <div class="buttons blue-tag">
+                    <h2><%= localType.name %></h2>
+                    <button><a href="/admin/local-types/edit-local-type/<%= localType._id %>">Edit</a></button>
+                    <form action="/admin/local-types" method="POST">
+                        <input type="hidden" id="id" name="id" value="<%= localType._id %>">
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>Empty</p>
+        <% } %>
+    </div>
+    
+    <button><a href="/admin/local-types/add-local-type">Add Local Type</a></button>
+
+</body>
+</html>

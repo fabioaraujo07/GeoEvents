@@ -1,0 +1,236 @@
+/* Add form */
+
+.add-form {
+  margin: 50px auto;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  }
+  
+  .add-form form {
+  display: flex;
+  flex-direction: column;
+  }
+  
+  .add-form label {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  }
+  
+  .add-form input[type="text"],
+  .add-form input[type="number"],
+  .add-form select {
+  padding: 10px;
+  margin: 5px 0px 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  background-color: #f2f2f2;
+  }
+  
+  .add-form input[type="text"]:focus,
+  .add-form input[type="number"]:focus,
+  .add-form select:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .add-form button {
+  padding: 10px;
+  margin: 10px 0px 0px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2b2d42;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  }
+  
+  .add-form button:hover {
+  background-color: #1e1f2b;
+  }
+  
+  .blue-tag {
+  background-color: #8d99ae;
+  color: #fff;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .blue-tag:hover {
+  background-color: #5c677d;
+  }
+  
+  .empty {
+  margin: 10px;
+  text-align: center;
+  }
+  
+  button {
+  margin: 10px;
+  }
+  
+  /* Dashboard */
+  
+  /* Estilo para o body */
+  body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f2f2f2;
+  }
+  
+  /* Estilo para o título */
+  h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 3em;
+  color: #2b2d42;
+  }
+  
+  /* Estilo para os contadores */
+  .numLocals, .numEvents, .numTickets, .numSales, .numUsers {
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .numLocals h2, .numEvents h2, .numTickets h2, .numSales h2, .numUsers h2 {
+  font-size: 2em;
+  margin: 20px 0 10px;
+  color: #2b2d42;
+  }
+  
+  /* Estilo para o gráfico */
+  #grafico-pizza {
+  width: 500px;
+  margin
+  }
+
+  /* Nav */
+
+  nav {
+    background-color: #2a2a2a;
+    color: white;
+    padding: 20px 0;
+    font-size: 1.5em;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #ffa500;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  nav li {
+    margin: 0 20px;
+  }
+  
+  nav h1 {
+    margin: 0;
+    font-size: 2.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  nav button {
+    background-color: #ffa500;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav button:hover {
+    background-color: #ff6600;
+  }
+
+  /* body */
+
+  body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 50px;
+  }
+  
+  .blue-tag {
+    display: inline-block;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2a2a2a;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blue-tag:hover {
+    background-color: #ff6600;
+  }
+  
+  .blue-tag h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .blue-tag p {
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  button {
+    margin: 20px 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffa500;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ff6600;
+  }
+  
+  button a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  */

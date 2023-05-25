@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <%- include("../partials/header.ejs") %>
+</head>
+<body>
+    
+    <%- include("../partials/nav.ejs") %>
+    
+    <div >
+        <% if(locals.length > 0) { %>
+            <% locals.forEach(local => { %>
+                <a class="blue-tag" href="/admin/locals/<%= local._id %>">
+                    <h2><%= local.name %></h2>
+                    <p><%= local.description %> | <%= local.localType %></p>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <p>Empty</p>
+        <% } %>
+    </div>
+    
+    <button><a href="/admin/locals/add-local">Add Local</a></button>
+    <button><a href="/admin/local-types">Local Types</a></button>
+
+</body>
+</html>

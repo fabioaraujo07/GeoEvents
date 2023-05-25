@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <%- include("../partials/header.ejs") %>
+</head>
+<body>
+    
+    <%- include("../partials/nav.ejs") %>
+
+    <div >
+        <% if(tickets.length > 0) { %>
+            <% tickets.forEach(ticket => { %>
+                <a class="blue-tag" href="/admin/tickets/<%= ticket._id %>">
+                    <h2><%= ticket.name %> | <%= ticket.price %>€</h2>
+                    <p><%= ticket.local %> | <%= ticket.event %></p>
+                </a>
+            <% }) %>
+        <% }else { %>
+            <p>Empty</p>
+        <% } %>
+    </div>
+</body>    
+</html>

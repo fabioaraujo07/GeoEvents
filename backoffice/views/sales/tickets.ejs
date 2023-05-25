@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <%- include("../partials/header.ejs") %>
+</head>
+<body>
+    
+    <%- include("../partials/nav.ejs") %>
+
+    <div>
+        <form action="/admin/sales/save-cart" method="POST">
+            <input type="hidden" id="id" name="id" value="<%= cartItem._id %>">
+            <input type="hidden" id="clientId" name="clientId" value="<%= cartItem.clientId %>">
+            <input type="hidden" id="local" name="local" value="<%= cartItem.local %>">
+            <input type="hidden" id="event" name="event" value="<%= cartItem.event %>">
+            <select id="ticket" name="ticket">
+                <% tickets.forEach(ticket => { %>
+                    <option value="<%= ticket._id %>"><%= ticket.name %></option>
+                <% }) %>
+            </select>
+            <label for="quantity">Quantity: </label>
+            <input type="number" id="quantity" name="quantity">
+            <button type="submit">Select</button>
+        </form>
+    </div>
+
+</body>
+</html>

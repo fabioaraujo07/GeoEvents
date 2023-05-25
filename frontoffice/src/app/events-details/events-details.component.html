@@ -1,0 +1,10 @@
+<div *ngIf="event">
+    <h2>{{ event.name }}</h2>
+    <div class="tickets">
+        <h3 *ngFor="let t of tickets; let i = index">
+            <div *ngIf="t.event == event.name">
+                <h3>{{t.name}} | {{t.price}}</h3>
+            </div>
+        </h3>
+    </div>
+</div>

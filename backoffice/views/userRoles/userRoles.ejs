@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <%- include("../partials/header.ejs") %>
+</head>
+<body>
+    
+    <%- include("../partials/nav.ejs") %>
+
+    <% if(userRoles.length > 0) { %>
+        <% userRoles.forEach(userRole => { %>
+            <div class="buttons blue-tag">
+                <h2><%= userRole.name %></h2>
+                <button><a href="/admin/user-roles/edit-user-role/<%= userRole._id %>">Edit</a></button>
+                <form action="/admin/user-roles" method="POST">
+                <input type="hidden" id="id" name="id" value="<%= userRole._id %>">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <p>Empty</p>
+    <% } %>
+
+    <button><a href="/admin/user-roles/add-user-role">Add User Role</a></button>
+
+</body>
+</html>

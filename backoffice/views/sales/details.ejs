@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <%- include("../partials/header.ejs") %>
+</head>
+<body>
+    
+    <%- include("../partials/nav.ejs") %>
+
+    <div>
+        <h2>Client Name: <%= sale.buyerFirstName %> <%= sale.buyerLastName %></h2>
+        <h2>Date: <%= moment(sale.date).format("DD/MM/YYYY") %></h2>
+        <h2>Time: <%= moment(sale.date).format("HH:mm:ss") %></h2>
+        <h2>Total Price: <%= sale.totalPrice %>€</h2>
+        <h2>Tickets:</h2>
+        <% sale.tickets.forEach(ticket => { %>
+            <% if(ticket.finished == true) { %>
+                <div class="blue-tag">
+                    <h2><%= ticket.ticket %> | Quantidade: <%= ticket.quantity %></h2>
+                    <p><%= ticket.local %> | <%= ticket.event %></p>
+                </div>
+            <% } %>
+        <% }) %>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+<div *ngIf="local">
+    <h2>{{ local.name }}</h2>
+    <div class="events">
+        <h3 *ngFor="let e of events; let i = index">
+            <div *ngIf="e.local == local.name">
+                <a routerLink="/event/{{e._id}}">
+                    {{e.name}}
+                </a>
+            </div>
+        </h3>
+    </div>
+</div>

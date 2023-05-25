@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <%- include("../partials/header.ejs") %>
+</head>
+<body>
+    
+    <%- include("../partials/nav.ejs") %>
+
+    <div class="add-form">
+        <form action="/admin/event-types/edit-event-type/<%= eventType._id %>" method="POST">
+            <input type="hidden" name="id" id="id" value="<%=eventType._id%>">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+            <button>Update</button>
+        </form>
+    </div>
+
+</body>
+</html>

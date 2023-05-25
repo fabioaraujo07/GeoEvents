@@ -1,0 +1,7 @@
+<div class="locals">
+    <h2 *ngFor="let l of locals; let i = index">
+        <a routerLink="/local/{{l._id}}">
+            {{l.name}}
+        </a>
+    </h2>
+</div>

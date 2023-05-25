@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <%- include("../partials/header.ejs") %>
+</head>
+<body>
+    
+    <%- include("../partials/nav.ejs") %>
+    
+    <div >
+        <% if(events.length > 0) { %>
+            <% events.forEach(event => { %>
+                <a class="blue-tag" href="/admin/events/<%= event._id %>">
+                    <h2><%= event.name %></h2>
+                    <p><%= event.eventType %> | <%= event.local %></p>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <p>Empty</p>
+        <% } %>
+    </div>
+    
+    <button><a href="/admin/events/add-event">Add Event</a></button>
+    <button><a href="/admin/event-types/">Event Types</a></button>
+
+</body>
+</html>

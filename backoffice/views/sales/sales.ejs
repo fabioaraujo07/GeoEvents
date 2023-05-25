@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <%- include("../partials/header.ejs") %>
+</head>
+<body>
+    
+    <%- include("../partials/nav.ejs") %>
+
+    <div>
+        <% if(sales.length > 0) { %>
+            <% sales.forEach(sale => { %>
+                <a class="blue-tag" href="/admin/sales/<%= sale._id %>">
+                    <h2><%= moment(sale.date).format("DD/MM/YYYY") %> | <%= sale.totalPrice %>€</h2>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <p>Empty</p>
+        <% } %>
+    </div>
+
+</body>
+</html>

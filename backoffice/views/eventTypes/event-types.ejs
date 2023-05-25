@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <%- include("../partials/header.ejs") %>
+</head>
+<body>
+    
+    <%- include("../partials/nav.ejs") %>
+    
+    <div>
+        <% if(eventTypes.length > 0) { %>
+            <% eventTypes.forEach(eventType => { %>
+                <div class="buttons blue-tag">
+                    <h2><%= eventType.name %></h2>
+                    <button><a href="/admin/event-types/edit-event-type/<%= eventType._id %>">Edit</a></button>
+                    <form action="/admin/event-types" method="POST">
+                        <input type="hidden" id="id" name="id" value="<%= eventType._id %>">
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>Empty</p>
+        <% } %>
+    </div>
+    
+    <button><a href="/admin/event-types/add-event-type">Add Event Type</a></button>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <%- include("../partials/header.ejs") %>
+</head>
+<body>
+    
+    <%- include("../partials/nav.ejs") %>
+
+    <div>
+        <% if(users.length > 0) { %>
+            <h2>Administrators:</h2>
+            <% users.forEach(user => { %>
+                <% if(user.role == "Administrador") { %>
+                    <a href="/admin/users/<%= user._id %>" class="blue-tag">
+                        <h2><%= user.firstName %> <%= user.lastName %> | <%= user.role %> </h2>
+                    </a>
+                <% } %>    
+            <% }) %>
+            <h2>Sellers:</h2>
+            <% users.forEach(user => { %>
+                <% if(user.role == "Vendedor") { %>
+                    <a href="/admin/users/<%= user._id %>" class="blue-tag">
+                        <h2><%= user.firstName %> <%= user.lastName %> | <%= user.role %> </h2>
+                    </a>
+                <% } %>    
+            <% }) %>
+            <h2>Clients:</h2>
+            <% users.forEach(user => { %>
+                <% if(user.role == "Cliente") { %>
+                    <a href="/admin/users/<%= user._id %>" class="blue-tag">
+                        <h2><%= user.firstName %> <%= user.lastName %> | <%= user.role %> </h2>
+                    </a>
+                <% } %>    
+            <% }) %>
+        <% }else { %>
+            <p>Empty</p>
+        <% } %>
+    </div>
+
+    <button><a href="/admin/users/add-user">Add User</a></button>
+    <button><a href="/admin/user-roles/">User Roles</a></button>
+
+</body>
+</html>

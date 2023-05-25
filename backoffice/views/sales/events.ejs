@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <%- include("../partials/header.ejs") %>
+</head>
+<body>
+    
+    <%- include("../partials/nav.ejs") %>
+
+    <div>
+        <form action="/admin/sales/tickets" method="POST">
+            <input type="hidden" id="id" name="id" value="<%= cartItem._id %>">
+            <input type="hidden" id="clientId" name="clientId" value="<%= cartItem.clientId %>">
+            <input type="hidden" id="local" name="local" value="<%= cartItem.local %>">
+            <select id="event" name="event">
+                <% events.forEach(event => { %>
+                    <option value="<%= event.name %>"><%= event.name %></option>
+                <% }) %>
+            </select>
+            <button type="submit">Select</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+h2
+{
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+h2{
+  height: 22.5rem;
+  width: 20rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #e72929;
+  align-items: center
+}
+
+h2 a:hover{
+  opacity: 0.9;
+  cursor: pointer;
+  color:black ;
+  background:#06ef0e
+}

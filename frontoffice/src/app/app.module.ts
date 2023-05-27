@@ -7,7 +7,7 @@ import { LocalsListComponent } from './locals-list/locals-list.component';
 import { LocalsDetailsComponent } from './locals-details/locals-details.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { EventsDetailsComponent } from './events-details/events-details.component';
-import { HomeComponent } from './partials/home/home.component';
+import { HeaderComponent } from './partials/header/header.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { HomeComponent } from './partials/home/home.component';
     LocalsListComponent,
     LocalsDetailsComponent,
     EventsDetailsComponent,
-    HomeComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
